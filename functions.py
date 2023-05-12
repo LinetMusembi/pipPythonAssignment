@@ -46,3 +46,13 @@ print(result)
 # Write a function that takes a list of integers and an unknown number of keyword arguments. 
 # The function should return a new list where each integer in the original list has been multiplied by 
 # the value of the corresponding keyword argument.
+def multiply_nums(int_list, **kwargs):
+    result = []
+    for num in int_list:
+        product = num
+        for key, value in kwargs.items():
+            product *= value
+        result.append(product)
+    return result
+result_list = multiply_nums([6,23,5], x=7, y=4, z=3)
+print(result_list)
